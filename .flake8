@@ -1,0 +1,8 @@
+[flake8]
+ignore =
+  # Indentation is not a multiple of four
+  E111,E114
+  # Continuation line under-indented for hanging indent
+  E121,E125,E131
+
+max-line-length=120
