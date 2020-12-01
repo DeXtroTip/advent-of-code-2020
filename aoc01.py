@@ -1,9 +1,9 @@
 #!/usr/bin/env python
 """
---- Day 1: ... ---
+--- Day 1: Report Repair ---
 https://adventofcode.com/2020/day/1
 
-Rank: xxxxx / yyyyy
+Rank: 60 / 50
 """
 from aocutils import read_input, timer
 
