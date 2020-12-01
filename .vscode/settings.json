@@ -17,5 +17,5 @@
     "--style",
     "${workspaceFolder}/.style.yapf"
   ],
-  "python.pythonPath": "venv/bin/python"
+  "python.pythonPath": "pypy/bin/python"
 }

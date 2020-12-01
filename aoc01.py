@@ -5,21 +5,28 @@ https://adventofcode.com/2020/day/1
 
 Rank: xxxxx / yyyyy
 """
-from aocutils import *
+from aocutils import read_input, timer
 
-INPUT = read_input('01', cast='int')
+data_input = read_input('01', cast='int')
 
 
 @timer
 def part1():
-  """Solve challenge part 1."""
-  return 0
+  for i in range(0, len(data_input)):
+    for j in range(i + 1, len(data_input)):
+      if data_input[i] + data_input[j] == 2020:
+        return data_input[i] * data_input[j]
 
 
 @timer
 def part2():
-  """Solve challenge part 2."""
-  return 0
+  for i in range(0, len(data_input)):
+    for j in range(i + 1, len(data_input)):
+      if data_input[i] + data_input[j] > 2020:
+        continue
+      for k in range(j + 1, len(data_input)):
+        if data_input[i] + data_input[j] + data_input[k] == 2020:
+          return data_input[i] * data_input[j] * data_input[k]
 
 
 if __name__ == "__main__":
