@@ -3,30 +3,30 @@
 --- Day 1: Report Repair ---
 https://adventofcode.com/2020/day/1
 
-Rank: 60 / 50
+Rank: Removed
 """
 from aocutils import read_input, timer
 
-data_input = read_input('01', cast='int')
+DATA_INPUT = read_input('01', cast='int')
 
 
 @timer
 def part1():
-  for i in range(0, len(data_input)):
-    for j in range(i + 1, len(data_input)):
-      if data_input[i] + data_input[j] == 2020:
-        return data_input[i] * data_input[j]
+  for i in range(0, len(DATA_INPUT)):
+    for j in range(i + 1, len(DATA_INPUT)):
+      if DATA_INPUT[i] + DATA_INPUT[j] == 2020:
+        return DATA_INPUT[i] * DATA_INPUT[j]
 
 
 @timer
 def part2():
-  for i in range(0, len(data_input)):
-    for j in range(i + 1, len(data_input)):
-      if data_input[i] + data_input[j] > 2020:
+  for i in range(0, len(DATA_INPUT)):
+    for j in range(i + 1, len(DATA_INPUT)):
+      if DATA_INPUT[i] + DATA_INPUT[j] > 2020:
         continue
-      for k in range(j + 1, len(data_input)):
-        if data_input[i] + data_input[j] + data_input[k] == 2020:
-          return data_input[i] * data_input[j] * data_input[k]
+      for k in range(j + 1, len(DATA_INPUT)):
+        if DATA_INPUT[i] + DATA_INPUT[j] + DATA_INPUT[k] == 2020:
+          return DATA_INPUT[i] * DATA_INPUT[j] * DATA_INPUT[k]
 
 
 if __name__ == "__main__":

@@ -106,9 +106,12 @@ def read_input(input_number: str, cast: str = None, strip_lines: bool = True) ->
       return [line.strip() if strip_lines else line for line in input_file.readlines()]
 
 
-def read_input_int_split_first_line(input_number: str, split_char: str = ',') -> List[int]:
+def read_input_split_first_line(input_number: str, cast: str = None, split_char: str = ',') -> List[int]:
   """Read input for given challenge day and return first line splitted by given char and casted to int."""
-  return [int(n) for n in read_input(input_number)[0].split(split_char)]
+  if cast == 'int':
+    return [int(n) for n in read_input(input_number)[0].split(split_char)]
+  else:
+    return [n for n in read_input(input_number)[0].split(split_char)]
 
 
 def tuple_sum(tuple_a: Tuple[float, ...], tuple_b: Tuple[float, ...]) -> Tuple[float, ...]:
