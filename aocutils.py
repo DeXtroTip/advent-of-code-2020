@@ -149,3 +149,11 @@ def get_printable_map(map_: Dict[Point, Any],
       line += str(mapping.get(map_val, map_val) if mapping is not None else map_val)
     out += line + '\n'
   return out
+
+
+def set_bit(value, bit):
+  return value | (1 << bit)
+
+
+def clear_bit(value, bit):
+  return value & ~(1 << bit)
