@@ -56,17 +56,17 @@ def part2():
     tiles[tile] = not tiles.get(tile, False)
   for _ in range(100):
     coords = set()
-    for x, y in tiles.keys():
-      coords.add((x, y))
+    for c in tiles.keys():
+      coords.add(c)
       for m in MOVES.values():
-        coords.add(m(x, y))
+        coords.add(m(*c))
     tiles_copy = dict(tiles)
-    for x, y in coords:
-      adj = sum(tiles_copy.get(m(x, y), False) for m in MOVES.values())
-      if tiles.get((x, y), False) and (adj == 0 or adj > 2):
-        tiles[(x, y)] = not tiles.get((x, y), False)
-      elif not tiles.get((x, y), False) and adj == 2:
-        tiles[(x, y)] = not tiles.get((x, y), False)
+    for c in coords:
+      adj = sum(tiles_copy.get(m(*c), False) for m in MOVES.values())
+      if tiles.get(c, False) and (adj == 0 or adj > 2):
+        tiles[c] = not tiles.get(c, False)
+      elif not tiles.get(c, False) and adj == 2:
+        tiles[c] = not tiles.get(c, False)
   return sum(x for x in tiles.values())
 
 
